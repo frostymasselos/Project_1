@@ -3,6 +3,8 @@ require_relative ("../models/owner.rb")
 require_relative ("../models/vet.rb")
 require ("pry-byebug")
 
+Owner.delete_all
+
 owner1 = Owner.new({
   "name" => "Andrew",
   "address" => "1 Castle Street",
