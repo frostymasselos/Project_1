@@ -36,31 +36,39 @@ class Owner
     SqlRunner.run(sql, values)
   end
 
-#   def update()
-#   sql = "UPDATE owners
-#   SET
-#   (
-#     name,
-#     address,
-#     phone
-#   ) =
-#   (
-#     $1, $2, $3
-#   )
-#   WHERE id = $4"
-#   values = [@name, @address, @phone, @id]
-#   SqlRunner.run(sql, values)
-# end
+  def update()
+  sql = "UPDATE owners
+  SET
+  (
+    name,
+    address,
+    phone
+  ) =
+  (
+    $1, $2, $3
+  )
+  WHERE id = $4"
+  values = [@name, @address, @phone, @id]
+  SqlRunner.run(sql, values)
+end
 
   def self.delete_all()
     sql = "DELETE FROM owners"
     SqlRunner.run (sql)
   end
 
-  # def self.all()
-  #   sql = "SELECT * FROM owners"
-  #   results = SqlRunner.run( sql )
-  #   return results.map { |hash| Owner.new( hash) }
-  # end
+  def self.all()
+    sql = "SELECT * FROM owners"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Owner.new( hash) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM owners
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values )
+    return Owner.new( results.first)
+  end
 
 end
