@@ -70,10 +70,10 @@ class Animal
     SqlRunner.run (sql)
   end
 
-  # def self.all()
-  #   sql = "SELECT * FROM animals"
-  #   results = SqlRunner.run( sql )
-  #   return results.map { |hash| Animal.new( hash) }
-  # end
+  def self.all()
+    sql = "SELECT * FROM animals"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Animal.new( hash) }
+  end
 
 end
