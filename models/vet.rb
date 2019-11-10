@@ -52,6 +52,15 @@ class Vet
   #Give all the owners of all the animals
   # this one vet is operating on.
 
+  def animals
+    sql = "SELECT animals.* FROM animals
+    WHERE animals.vet_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |animal| Animal.new(animal)}
+  end
+
+
   def self.delete_all()
     sql = "DELETE FROM vets"
     SqlRunner.run (sql)
