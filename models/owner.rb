@@ -64,12 +64,6 @@ class Owner
   # Give all the vets that's operating
   # on it's animal.
 
-#  sql = "SELECT films.* FROM films
-#     INNER JOIN tickets
-#     ON films.id = tickets.film_id
-#     WHERE customer_id = $1"
-# values = [@id]
-
   def self.delete_all()
     sql = "DELETE FROM owners"
     SqlRunner.run (sql)
