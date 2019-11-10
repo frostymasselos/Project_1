@@ -75,13 +75,13 @@ class Animal
 
   # Show the one owner the animal has.
 
-  # def vet
-  #   sql = "SELECT * FROM vets
-  #   WHERE id = $1"
-  #   values = [@vet_id]
-  #   results = SqlRunner.run(sql, values)
-  #   return Vet.new(results.first)
-  # end
+  def vet
+    sql = "SELECT * FROM vets
+    WHERE id = $1"
+    values = [@vet_id]
+    results = SqlRunner.run(sql, values)
+    return Vet.new(results.first)
+  end
 
   # Show the one vet the animal has.
 
