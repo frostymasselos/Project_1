@@ -40,15 +40,15 @@ class Vet
     SqlRunner.run(sql, values)
   end
 
-  # def owners
-  #   sql = "SELECT owners.* FROM owners
-  #   INNER JOIN animals
-  #   ON owners.id = animals.owner_id
-  #   WHERE animals.vet_id = $1;"
-  #   values = [@id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map { |owner| Owner.new(owner)}
-  # end
+  def owners
+    sql = "SELECT owners.* FROM owners
+    INNER JOIN animals
+    ON owners.id = animals.owner_id
+    WHERE animals.vet_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner| Owner.new(owner)}
+  end
   #Give all the owners of all the animals
   # this one vet is operating on.
 
