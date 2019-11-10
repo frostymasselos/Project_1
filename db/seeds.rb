@@ -4,6 +4,7 @@ require_relative ("../models/vet.rb")
 require ("pry-byebug")
 
 Owner.delete_all
+Vet.delete_all
 
 owner1 = Owner.new({
   "name" => "Andrew",
@@ -17,6 +18,16 @@ owner2 = Owner.new({
   })
 owner1.save
 owner2.save
+
+vet1 = Vet.new({
+  "name" => "Angus"
+  })
+vet2 = Vet.new({
+  "name" => "Barry"
+  })
+vet1.save
+vet2.save
+
 
 binding.pry
 nil
