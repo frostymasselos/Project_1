@@ -34,4 +34,10 @@ class Owner
     SqlRunner.run (sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM owners"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Owner.new( hash) }
+  end
+
 end
