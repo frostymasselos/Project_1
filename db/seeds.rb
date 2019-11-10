@@ -3,6 +3,7 @@ require_relative ("../models/owner.rb")
 require_relative ("../models/vet.rb")
 require ("pry-byebug")
 
+Animal.delete_all
 Owner.delete_all
 Vet.delete_all
 
@@ -27,6 +28,27 @@ vet2 = Vet.new({
   })
 vet1.save
 vet2.save
+
+animal1 = Animal.new({
+  "name" => "Alex",
+  "d_o_b" => "01/01/95",
+  "type" => "Aardvark",
+  "notes" => "blah blah blah",
+  "vet_id" => vet1.id,
+  "owner_id" => owner1.id
+  })
+animal2 = Animal.new({
+  "name" => "Bernie",
+  "d_o_b" => "02/01/95",
+  "type" => "Badger",
+  "notes" => "blah blah blah",
+  "vet_id" => vet2.id,
+  "owner_id" => owner2.id
+  })
+animal1.save
+animal2.save
+
+
 
 
 binding.pry
