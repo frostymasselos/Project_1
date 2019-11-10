@@ -63,6 +63,9 @@ class Owner
   end
   # Give all the vets that's operating
   # on it's animal.
+  # Do all the vet rows that're mentioned in
+  # all animal rows. Moreover, only for the animal
+   # row that has the same owner_id as this current owner.
 
   def self.delete_all()
     sql = "DELETE FROM owners"

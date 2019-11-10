@@ -74,6 +74,8 @@ class Animal
   end
 
   # Show the one owner the animal has.
+  # Select all owners where those owner rows
+  # have the same id number as this animal's attribute.
 
   def vet
     sql = "SELECT * FROM vets
