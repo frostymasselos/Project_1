@@ -33,12 +33,24 @@ class Vet
   end
 
   def update()
-  sql = "UPDATE vets
-  SET name = $1
-  WHERE id = $2"
-  values = [@name, @id]
-  SqlRunner.run(sql, values)
-end
+    sql = "UPDATE vets
+    SET name = $1
+    WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  # def owners
+  #   sql = "SELECT owners.* FROM owners
+  #   INNER JOIN animals
+  #   ON owners.id = animals.owner_id
+  #   WHERE animals.vet_id = $1;"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map { |owner| Owner.new(owner)}
+  # end
+  #Give all the owners of all the animals
+  # this one vet is operating on.
 
   def self.delete_all()
     sql = "DELETE FROM vets"
@@ -51,11 +63,12 @@ end
     return results.map { |hash| Vet.new( hash) }
   end
 
-  # def self.find( id )
-  #   sql = "SELECT * FROM vets WHERE id = $1"
-  #   values = [id]
-  #   results = SqlRunner.run (sql, values )
-  #   return Vet.new( results.first)
-  # end
+  def self.find( id )
+    sql = "SELECT * FROM vets
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values )
+    return Vet.new( results.first)
+  end
 
 end
