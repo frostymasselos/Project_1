@@ -6,16 +6,19 @@
     <th>D.O.B</th>
     <th>Type</th>
     <th>Vet assigned to</th>
-    <th>Owner assigned to</th>
+    <th>Owner</th>
     <th>Notes</th>
   </tr>
   <tr>
     <td><%= @animal.name %></td>
     <td><%= @animal.d_o_b %></td>
     <td><%= @animal.type %></td>
-    <td><%= @animal.vet_id %></td>
-    <td><%= @animal.owner_id %></td>
+    <td><%= Vet.find(@animal.vet_id).name %></td>
+    <td><%= Owner.find(@animal.owner_id).name %></td>
     <td><%= @animal.notes %></td>
+
+
+
   </tr>
 </table>
 
