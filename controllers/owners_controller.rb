@@ -11,7 +11,7 @@ get '/owners' do
   erb(:"owners/index")
 end
 
-# get '/vets/:id' do
-#   @vet = Vet.find(params['id'].to_i)
-#   erb(:"vets/show")
-# end
+get '/owners/:id' do
+  @owner = Owner.find(params['id'].to_i)
+  erb(:"vets/show")
+end

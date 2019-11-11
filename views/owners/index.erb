@@ -1,2 +1,17 @@
 <h1>Owners</h1>
-<p><%= @owners %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Pets</th>
+  </tr>
+  <% for owner in @owners %>
+  <tr>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
+    <td><%= owner.address %></td>
+    <td><%= owner.phone %></td>
+  </tr>
+  <% end %>
+</table>
