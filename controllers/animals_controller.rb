@@ -10,3 +10,14 @@ get '/animals' do
   @animals = Animal.all
   erb(:"animals/index")
 end
+
+get '/animals/new' do
+  @owners = Owner.all
+  @vets = Vet.all
+  erb(:"animals/new")
+end
+
+# get '/owners/:id' do
+#   @owner = Owner.find(params['id'].to_i)
+#   erb(:"owners/show")
+# end
