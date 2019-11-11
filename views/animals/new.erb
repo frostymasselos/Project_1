@@ -1,1 +1,66 @@
 <h1>Add an Animal</h1>
+
+<form action="/animals" method="post">
+
+  <div>
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="first_name" id="name"/>
+    </div>
+
+    <div>
+      <label for="d_o_b">D.O.B:</label>
+      <input type="text" name="date_of_birth" id="d_o_b"/>
+    </div>
+
+    <!-- <label for="start">Date of birth:</label>
+    <input type="date" id="start" name="trip-start"
+       min="1900-01-01" max="2100-12-31"> -->
+
+    <div>
+      <label for="type">Type:</label>
+      <input type="text" name="the_type" id="type"/>
+    </div>
+
+    <div>
+      <label for="notes">Notes:</label>
+      <input type="text" name="the_notes" id="notes"/>
+    </div>
+
+    <!-- <form>
+      <label for="blog">New Blog Post: </label>
+      <br>
+      <textarea id="blog" name="blog" rows="5" cols="30">
+      </textarea>
+    </form> -->
+
+    <div>
+      <label>
+        Select a vet:
+        <select name="victim_id">
+          <% for vet in @vets %>
+          <option value="<%= vet.id %>"><%= vet.name %></option>
+          <% end %>
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Select a owner:
+        <select name="owner_id">
+          <% for owner in @owners %>
+          <option value="<%= owner.id %>"><%= owner.name %></option>
+          <% end %>
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit"/>
+    </div>
+
+  </div>
+
+</form>

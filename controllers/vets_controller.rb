@@ -11,9 +11,26 @@ get '/vets' do
   erb(:"vets/index")
 end
 
+get '/vets/new' do
+  @owners = Owner.all
+  @vets = Vet.all
+  erb(:"vets/new")
+end
+
+post '/vets' do
+  Vet.new(params).save
+  redirect to '/vets'
+end
+
 get '/vets/:id' do
   @vet = Vet.find(params['id'].to_i)
   erb(:"vets/show")
+end
+
+get '/vets/:id/edit' do
+  # @houses = House.all
+  @vet = Vet.find(params['id'])
+  erb(:"vets/edit")
 end
 
 # get '/vets/:id/:id' do
