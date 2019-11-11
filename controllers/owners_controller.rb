@@ -26,10 +26,10 @@ get '/owners/:id' do
 end
 
 #
-# get '/vets/:id/edit' do
-#   @vet = Vet.find(params['id'])
-#   erb(:"vets/edit")
-# end
+get '/vets/:id/edit' do
+  @vet = Vet.find(params['id'])
+  erb(:"vets/edit")
+end
 #
 # post '/vets/:id' do
 #   vet = Vet.new(params)
