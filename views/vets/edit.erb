@@ -1,1 +1,19 @@
-<p>testing</p>
+<h1>Add an Vet</h1>
+
+<form action="/vets/<%= @vet.id %>" method="post">
+
+  <div>
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"
+      value="<%= @vet.name %>"/>/>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit"/>
+    </div>
+
+  </div>
+
+</form>

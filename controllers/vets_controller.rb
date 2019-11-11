@@ -12,8 +12,6 @@ get '/vets' do
 end
 
 get '/vets/new' do
-  @owners = Owner.all
-  @vets = Vet.all
   erb(:"vets/new")
 end
 
@@ -23,14 +21,25 @@ post '/vets' do
 end
 
 get '/vets/:id' do
-  @vet = Vet.find(params['id'].to_i)
+  @vet = Vet.find(params['id'])
   erb(:"vets/show")
 end
 
 get '/vets/:id/edit' do
-  # @houses = House.all
   @vet = Vet.find(params['id'])
   erb(:"vets/edit")
+end
+
+post '/vets/:id' do
+  vet = Vet.new(params)
+  vet.update
+  redirect to "/vets/#{params['id']}"
+end
+
+post '/vets/:id/delete' do
+  student = Student.find(params['id'])
+  student.delete
+  redirect to '/vets'
 end
 
 # get '/vets/:id/:id' do
