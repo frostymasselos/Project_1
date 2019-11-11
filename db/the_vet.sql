@@ -21,8 +21,8 @@ CREATE TABLE animals (
   d_o_b VARCHAR (225),
   type VARCHAR(225),
   notes TEXT,
-  vet_id INT4 REFERENCES vets(id),
-  owner_id INT4 REFERENCES owners(id)
+  vet_id INT4 REFERENCES vets(id) ON DELETE CASCADE,
+  owner_id INT4 REFERENCES owners(id) ON DELETE CASCADE
 );
 
   -- Am I right in thinking that animals table MUST be

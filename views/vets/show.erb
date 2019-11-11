@@ -13,4 +13,8 @@
   </ul>
   <% end %>
 
-  
+<a href="/vets/<%= @vet.id %>/edit">Edit</a>
+
+<form action="/vets/<%= @vet.id %>/delete" method="POST">
+<input type="submit" value="Delete">
+</form>

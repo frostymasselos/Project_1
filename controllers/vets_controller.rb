@@ -37,14 +37,15 @@ post '/vets/:id' do
 end
 
 post '/vets/:id/delete' do
-  student = Student.find(params['id'])
-  student.delete
+  vet = Vet.find(params['id'])
+  vet.delete
   redirect to '/vets'
 end
 
-# get '/vets/:id/:id' do
-#   @vet = Vet.find(params['id'].to_i)
-#   erb(:"vets/show_")
+# post '/students/:id/delete' do
+#   student = Student.find(params['id'])
+#   student.delete
+#   redirect to '/students'
 # end
 
 # ^ Remember this has to come first - the program
