@@ -21,5 +21,9 @@ end
 #   erb(:"vets/show_")
 # end
 
+# ^ Remember this has to come first - the program
+# will run the the first :id. This :id is a wildcard
+# and can be anything!
+
 # Params must always convert into string (in Sinatra)
 # Why can't '/vets/:id' be anything?

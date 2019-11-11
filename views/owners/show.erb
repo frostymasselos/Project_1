@@ -1,0 +1,14 @@
+<h1>Owner: <%= @owner.name %></h1>
+
+
+  <% @owners.animals.each do |animal| %>
+  <h3>Animal: <%= animal.name %></h3>
+
+  <ul>
+  <li><%= animal.d_o_b %></li>
+  <li><%= animal.type %></li>
+  <li><%= animal.notes %></li>
+  <li><%= animal.owner.name %></li>
+  <li><%= animal.vet.name %></li>
+  </ul>
+  <% end %>
