@@ -1,6 +1,6 @@
 <h1>Animal: <%= @animal.name %></h1>
 
-<table>
+<table class="animal_table">
   <tr>
     <th>Name</th>
     <th>D.O.B</th>
@@ -16,8 +16,6 @@
     <td><%= Vet.find(@animal.vet_id).name %></td>
     <td><%= Owner.find(@animal.owner_id).name %></td>
     <td><%= @animal.notes %></td>
-
-
 
   </tr>
 </table>

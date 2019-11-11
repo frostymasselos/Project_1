@@ -1,7 +1,7 @@
 <h1>Animals belonging to <%= @vet.name %>:</h1>
-
+<% if @vet.animals.length > 0 %>
   <% @vet.animals.each do |animal| %>
-  <h3><%= animal.name %></h3>
+  <h3>Animal: <%= animal.name %></h3>
 
   <ul>
   <li>D.O.B: <%= animal.d_o_b %></li>
@@ -10,7 +10,9 @@
   <li>Notes: <%= animal.notes %></li>
   </ul>
   <% end %>
-
+<% else %>
+  <p>No animals have been assigned to <%= @vet.name %>.</p>
+<% end %>
 <a href="/vets/<%= @vet.id %>/edit">Edit</a>
 
 <form action="/vets/<%= @vet.id %>/delete" method="POST">
