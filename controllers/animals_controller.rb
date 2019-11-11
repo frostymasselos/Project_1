@@ -29,14 +29,16 @@ end
 
 get '/animals/:id/edit' do
   @animal = Animal.find(params['id'])
+  @vets = Vet.all
+  @owners = Owner.all
   erb(:"animals/edit")
 end
 
-# post '/owners/:id' do
-#   owner = Owner.new(params)
-#   owner.update
-#   redirect to "/owners/#{params['id']}"
-# end
+post '/animals/:id' do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/animals/#{params['id']}"
+end
 #
 # post '/owners/:id/delete' do
 #   owner = Owner.find(params['id'])

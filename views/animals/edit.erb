@@ -1,0 +1,70 @@
+<h1>Edit <%= @animal.name %></h1>
+
+<form action="/animals/<%= @animal.id %>" method="post">
+
+  <div>
+
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"
+      value="<%= @animal.name %>"/>
+    </div>
+
+    <div>
+      <label for="d_o_b">D.O.B:</label>
+      <input type="text" name="d_o_b" id="d_o_b"
+      value="<%= @animal.d_o_b %>"/>
+    </div>
+
+    <!-- <label for="start">Date of birth:</label>
+    <input type="date" id="start" name="trip-start"
+       min="1900-01-01" max="2100-12-31"> -->
+
+    <div>
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type"
+      value="<%= @animal.type %>"/>
+    </div>
+
+    <div>
+      <label for="notes">Notes:</label>
+      <input type="text" name="notes" id="notes"
+      value="<%= @animal.notes %>"/>
+    </div>
+
+    <!-- <form>
+      <label for="blog">New Blog Post: </label>
+      <br>
+      <textarea id="blog" name="blog" rows="5" cols="30">
+      </textarea>
+    </form> -->
+
+    <div>
+      <label>
+        Select a vet:
+        <select name="vet_id">
+          <% for vet in @vets %>
+          <option value="<%= vet.id %>"><%= vet.name %></option>
+          <% end %>
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Select a owner:
+        <select name="owner_id">
+          <% for owner in @owners %>
+          <option value="<%= owner.id %>"><%= owner.name %></option>
+          <% end %>
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <input type="submit" value="Submit"/>
+    </div>
+
+  </div>
+
+</form>
