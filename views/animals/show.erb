@@ -1,0 +1,20 @@
+<h1>Animal: <%= @animal.name %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>D.O.B</th>
+    <th>Type</th>
+    <th>Vet assigned to</th>
+    <th>Owner assigned to</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td><%= @animal.name %></td>
+    <td><%= @animal.d_o_b %></td>
+    <td><%= @animal.type %></td>
+    <td><%= @animal.vet_id %></td>
+    <td><%= @animal.owner_id %></td>
+    <td><%= @animal.notes %></td>
+  </tr>
+</table>

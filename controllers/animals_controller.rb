@@ -21,6 +21,6 @@ end
 # end
 #
 get '/animals/:id' do
-  # @animal = Animal.find(params['id'])
+  @animal = Animal.find(params['id'])
   erb(:"animals/show")
 end
