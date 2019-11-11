@@ -25,17 +25,16 @@ get '/owners/:id' do
   erb(:"owners/show")
 end
 
-#
-get '/vets/:id/edit' do
-  @vet = Vet.find(params['id'])
-  erb(:"vets/edit")
+get '/owners/:id/edit' do
+  @owner = Owner.find(params['id'])
+  erb(:"owners/edit")
 end
-#
-# post '/vets/:id' do
-#   vet = Vet.new(params)
-#   vet.update
-#   redirect to "/vets/#{params['id']}"
-# end
+
+post '/vets/:id' do
+  vet = Vet.new(params)
+  vet.update
+  redirect to "/vets/#{params['id']}"
+end
 #
 # post '/vets/:id/delete' do
 #   vet = Vet.find(params['id'])

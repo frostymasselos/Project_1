@@ -42,12 +42,6 @@ post '/vets/:id/delete' do
   redirect to '/vets'
 end
 
-# post '/students/:id/delete' do
-#   student = Student.find(params['id'])
-#   student.delete
-#   redirect to '/students'
-# end
-
 # ^ Remember this has to come first - the program
 # will run the the first :id. This :id is a wildcard
 # and can be anything!
