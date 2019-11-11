@@ -16,4 +16,10 @@ get '/vets/:id' do
   erb(:"vets/show")
 end
 
+# get '/vets/:id/:id' do
+#   @vet = Vet.find(params['id'].to_i)
+#   erb(:"vets/show_")
+# end
+
 # Params must always convert into string (in Sinatra)
+# Why can't '/vets/:id' be anything?
