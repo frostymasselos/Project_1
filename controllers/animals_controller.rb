@@ -16,8 +16,3 @@ get '/animals/new' do
   @vets = Vet.all
   erb(:"animals/new")
 end
-
-# get '/owners/:id' do
-#   @owner = Owner.find(params['id'].to_i)
-#   erb(:"owners/show")
-# end
