@@ -30,10 +30,10 @@ get '/owners/:id/edit' do
   erb(:"owners/edit")
 end
 
-post '/vets/:id' do
-  vet = Vet.new(params)
-  vet.update
-  redirect to "/vets/#{params['id']}"
+post '/owners/:id' do
+  owner = Owner.new(params)
+  owner.update
+  redirect to "/owners/#{params['id']}"
 end
 #
 # post '/vets/:id/delete' do
