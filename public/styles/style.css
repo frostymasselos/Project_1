@@ -1,0 +1,23 @@
+h1 {
+  font-family: cursive;
+}
+
+a {
+  font-family: math;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+#nav_bar {
+  width: 220px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: inline-block;
+}
