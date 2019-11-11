@@ -10,13 +10,15 @@
     <th>Notes</th>
   </tr>
   <% for animal in @animals %>
-    <tr>
-      <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
-      <td><%= animal.d_o_b %></td>
-      <td><%= animal.type %></td>
-      <td><%= animal.vet_id %></td>
-      <td><%= animal.owner_id %></td>
-      <td><%= animal.notes %></td>
-    </tr>
+  <tr>
+    <td><a href="/animals/<%= animal.id %>"><%= animal.name %></a></td>
+    <td><%= animal.d_o_b %></td>
+    <td><%= animal.type %></td>
+    <td><%= animal.vet_id %></td>
+    <td><%= animal.owner_id %></td>
+    <td><%= animal.notes %></td>
+  </tr>
   <% end %>
 </table>
+
+<p><a href="/animals/new">Add an Animal</a></p>
