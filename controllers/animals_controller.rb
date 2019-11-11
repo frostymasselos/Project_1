@@ -12,7 +12,15 @@ get '/animals' do
 end
 
 get '/animals/new' do
-  @owners = Owner.all
-  @vets = Vet.all
   erb(:"animals/new")
+end
+#
+# post '/owners' do
+#   Owner.new(params).save
+#   redirect to '/owners'
+# end
+#
+get '/animals/:id' do
+  # @animal = Animal.find(params['id'])
+  erb(:"animals/show")
 end
