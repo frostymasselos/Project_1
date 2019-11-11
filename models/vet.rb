@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner.rb' )
 class Vet
 
   attr_reader :id, :name
-  attr_reader :id, :name
+  attr_writer :id, :name
 
   def initialize (options)
     @id = options['id'].to_i if options['id']

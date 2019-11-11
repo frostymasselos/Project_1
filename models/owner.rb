@@ -67,9 +67,9 @@ class Owner
   # all animal rows. Moreover, only for the animal
    # row that has the same owner_id as this current owner.
 
-   def animals
-     sql = "SELECT animals.* FROM animals
-     WHERE animals.owner_id = $1;"
+   def animals()
+     sql = "SELECT * FROM animals
+     WHERE owner_id = $1;"
      values = [@id]
      results = SqlRunner.run(sql, values)
      return results.map { |animal| Animal.new(animal)}
