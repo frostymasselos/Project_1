@@ -98,4 +98,12 @@ class Animal
     return results.map { |hash| Animal.new( hash) }
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values )
+    return Animal.new( results.first)
+  end
+
 end
