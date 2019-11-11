@@ -1,6 +1,19 @@
 <h1>Owner: <%= @owner.name %></h1>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+  </tr>
+  <tr>
+    <td><%= @owner.name %></td>
+    <td><%= @owner.address %></td>
+    <td><%= @owner.phone %></td>
+  </tr>
+</table>
 
+<h1>Owner's animal(s)</h1>
 
 <% @owner.animals.each do |animal| %>
 <h3>Animal: <%= animal.name %></h3>

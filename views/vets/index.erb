@@ -3,14 +3,10 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th>Pet</th>
   </tr>
   <% for vet in @vets %>
   <tr>
     <td><a href="/vets/<%= vet.id %>"><%= vet.name %></a></td>
-    <td>|</td>
-    <td>animals of vet?</td>
   </tr>
   <% end %>
 </table>
