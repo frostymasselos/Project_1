@@ -35,9 +35,9 @@ post '/owners/:id' do
   owner.update
   redirect to "/owners/#{params['id']}"
 end
-#
-# post '/vets/:id/delete' do
-#   vet = Vet.find(params['id'])
-#   vet.delete
-#   redirect to '/vets'
-# end
+
+post '/owners/:id/delete' do
+  owner = Owner.find(params['id'])
+  owner.delete
+  redirect to '/owners'
+end
