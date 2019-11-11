@@ -15,3 +15,8 @@ get '/owners/:id' do
   @owner = Owner.find(params['id'].to_i)
   erb(:"owners/show")
 end
+
+post '/vets' do
+  Vet.new(params).save
+  redirect to '/vets'
+end
